@@ -12,7 +12,7 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
-// Fonts
+# Fonts
 *.ttf
 *.asset
 
