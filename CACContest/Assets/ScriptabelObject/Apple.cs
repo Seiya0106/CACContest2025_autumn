@@ -10,5 +10,6 @@ public class Apple : ScriptableObject
     public float interval = 3f;
     public Vector2 spawnPos = new Vector2(700f, 0f);
     public Vector2 destroyPos = new Vector2(-700f, 0f);
+    public string appleName;
     public float moveSpeed = -100f;
 }
