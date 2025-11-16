@@ -11,7 +11,10 @@ public class AppleSpawner : MonoBehaviour
         appleData.score = 0;
         appleData.isPushed = false;
         appleData.appleName = "";
-        
+        appleData.timeLimit = 30f;
+        appleData.interval = 3f;
+        appleData.moveSpeed = -300f;
+
         StartCoroutine(SpawnApple());
     }
 

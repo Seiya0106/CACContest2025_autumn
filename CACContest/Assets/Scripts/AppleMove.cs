@@ -14,7 +14,7 @@ public class AppleMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(appleData.moveSpeed * Time.deltaTime * 500f, 0, 0);
+        transform.Translate(appleData.moveSpeed * Time.deltaTime, 0, 0);
         if (transform.localPosition.x <= appleData.destroyPos.x)
         {
             appleData.appleName = "";
