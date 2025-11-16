@@ -32,6 +32,9 @@ public class PoisonAppleButton : MonoBehaviour,
         if (appleData.appleName == "PoisonApple(Clone)")
         {
             Debug.Log("毒リンゴが押された");
+            appleData.score++;
+            Debug.Log("スコア: " + appleData.score);
+            appleData.isPushed = true;
         }
         else if (appleData.appleName == "")
         {
@@ -40,6 +43,9 @@ public class PoisonAppleButton : MonoBehaviour,
         else
         {
             Debug.Log("違うリンゴが押された");
+            appleData.score--;
+            Debug.Log("スコア: " + appleData.score);
+            appleData.isPushed = true;
         }
     }
 }

@@ -32,6 +32,9 @@ public class GoldAppleButton : MonoBehaviour,
         if (appleData.appleName == "GoldApple(Clone)")
         {
             Debug.Log("金のリンゴが押された");
+            appleData.score++;
+            Debug.Log("スコア: " + appleData.score);
+            appleData.isPushed = true;
         }
         else if (appleData.appleName == "")
         {
@@ -40,6 +43,9 @@ public class GoldAppleButton : MonoBehaviour,
         else
         {
             Debug.Log("違うリンゴが押された");
+            appleData.score--;
+            Debug.Log("スコア: " + appleData.score);
+            appleData.isPushed = true;
         }
     }
 }

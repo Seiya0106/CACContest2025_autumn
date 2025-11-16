@@ -33,6 +33,9 @@ public class AppleButton : MonoBehaviour,
         if (appleData.appleName == "Apple(Clone)")
         {
             Debug.Log("普通のリンゴが押された");
+            appleData.score++;
+            Debug.Log("スコア: " + appleData.score);
+            appleData.isPushed = true;
         }
         else if (appleData.appleName == "")
         {
@@ -41,6 +44,9 @@ public class AppleButton : MonoBehaviour,
         else
         {
             Debug.Log("違うリンゴが押された");
+            appleData.score--;
+            Debug.Log("スコア: " + appleData.score);
+            appleData.isPushed = true;
         }
     }
 }

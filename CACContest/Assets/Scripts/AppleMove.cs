@@ -17,6 +17,16 @@ public class AppleMove : MonoBehaviour
         transform.Translate(appleData.moveSpeed * Time.deltaTime * 500f, 0, 0);
         if (transform.localPosition.x <= appleData.destroyPos.x)
         {
+            appleData.appleName = "";
+            appleData.isPushed = false;
+            appleData.score--;
+            Debug.Log("スコア: " + appleData.score);
+            Destroy(this.gameObject);
+        }
+        else if (appleData.isPushed)
+        {
+            appleData.isPushed = false;
+            appleData.appleName = "";
             Destroy(this.gameObject);
         }
 

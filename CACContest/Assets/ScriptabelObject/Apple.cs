@@ -12,4 +12,6 @@ public class Apple : ScriptableObject
     public Vector2 destroyPos = new Vector2(-700f, 0f);
     public string appleName;
     public float moveSpeed = -100f;
+    public int score = 0;
+    public bool isPushed = false;
 }
