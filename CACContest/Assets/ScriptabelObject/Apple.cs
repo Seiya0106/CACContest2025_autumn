@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Apple : ScriptableObject
 {
     public List<Image> appleSprites;
-    public float interval = 2f;
+    public float interval = 1.6f;
     public Vector2 spawnPos = new Vector2(700f, 0f);
     public Vector2 destroyPos = new Vector2(-700f, 0f);
     public string appleName;

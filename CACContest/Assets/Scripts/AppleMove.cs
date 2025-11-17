@@ -36,7 +36,7 @@ public class AppleMove : MonoBehaviour
             isInFrame = true;
             appleData.appleName = this.name;
         }
-        if (isInFrame && transform.localPosition.x <= -350f)
+        if (isInFrame && transform.localPosition.x <= -370f)
         {
             isInFrame = false;
             appleData.appleName = "";
