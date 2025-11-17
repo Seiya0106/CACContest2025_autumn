@@ -12,8 +12,8 @@ public class AppleSpawner : MonoBehaviour
         appleData.isPushed = false;
         appleData.appleName = "";
         appleData.timeLimit = 30f;
-        appleData.interval = 3f;
-        appleData.moveSpeed = -300f;
+        appleData.interval = 2f;
+        appleData.moveSpeed = -500f;
 
         StartCoroutine(SpawnApple());
     }
@@ -27,7 +27,6 @@ public class AppleSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(appleData.interval);
             int index = Random.Range(0, appleData.appleSprites.Count);
             // UI Image プレハブをインスタンス化し、この Transform（UI の親）に設定する
             // その後 RectTransform.anchoredPosition を設定して spawnPos に表示させる
@@ -37,6 +36,7 @@ public class AppleSpawner : MonoBehaviour
             appleImage.transform.SetParent(this.transform, false);
             // UI 配置には RectTransform.anchoredPosition を使う
             appleImage.rectTransform.anchoredPosition = appleData.spawnPos;
+            yield return new WaitForSeconds(appleData.interval);
         }
     }
 }
