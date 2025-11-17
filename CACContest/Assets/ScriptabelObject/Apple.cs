@@ -11,9 +11,10 @@ public class Apple : ScriptableObject
     public Vector2 spawnPos = new Vector2(700f, 0f);
     public Vector2 destroyPos = new Vector2(-700f, 0f);
     public string appleName;
-    public float moveSpeed = -500f;
+    public float moveSpeed = -600f;
     public int score = 0;
     public int result = 0;
     public float timeLimit = 30f;
     public bool isPushed = false;
+    public int life = 3;
 }

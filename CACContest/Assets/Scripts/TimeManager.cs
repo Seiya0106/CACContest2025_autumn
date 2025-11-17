@@ -15,6 +15,7 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         // 初期化処理
+        Initialize();
         timeUpText.gameObject.SetActive(false);
         isTimeUp = false;
     }
@@ -50,10 +51,23 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    void Initialize()
+    {
+        // スコア初期化
+        appleData.score = 0;
+        appleData.isPushed = false;
+        appleData.appleName = "";
+        appleData.timeLimit = 30f;
+        appleData.interval = 2f;
+        appleData.moveSpeed = -600f;
+        appleData.life = 3;
+        highScore = 0;
+    }
+
     // タイムアップ処理
     public void TimeUp()
     {
-        if (appleData.timeLimit <= 0 && !isTimeUp)
+        if ((appleData.timeLimit <= 0 || appleData.life <= 0) && !isTimeUp)
         {
             appleData.timeLimit = 0;
             timeUpText.gameObject.SetActive(true);

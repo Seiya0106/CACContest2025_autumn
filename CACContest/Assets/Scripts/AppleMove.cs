@@ -19,7 +19,7 @@ public class AppleMove : MonoBehaviour
         {
             appleData.appleName = "";
             appleData.isPushed = false;
-            appleData.score--;
+            appleData.life--;
             Debug.Log("スコア: " + appleData.score);
             Destroy(this.gameObject);
         }

@@ -43,7 +43,7 @@ public class PoisonAppleButton : MonoBehaviour,
         else
         {
             Debug.Log("違うリンゴが押された");
-            appleData.score--;
+            appleData.life--;
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
         }

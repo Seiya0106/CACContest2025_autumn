@@ -7,14 +7,6 @@ public class AppleSpawner : MonoBehaviour
     public Apple appleData;
     void Start()
     {
-        // スコア初期化
-        appleData.score = 0;
-        appleData.isPushed = false;
-        appleData.appleName = "";
-        appleData.timeLimit = 30f;
-        appleData.interval = 2f;
-        appleData.moveSpeed = -500f;
-
         StartCoroutine(SpawnApple());
     }
 
