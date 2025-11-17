@@ -41,5 +41,11 @@ public class AppleMove : MonoBehaviour
             isInFrame = false;
             appleData.appleName = "";
         }
+
+        // 終了時に動かないようにする
+        if (appleData.timeLimit <= 0 || appleData.life <= 0)
+        {
+            this.enabled = false;
+        }
     }
 }
