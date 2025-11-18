@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f944b1bd0c58d4f1c9cf7302340bb7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleData: {fileID: 11400000, guid: 81ca6a60645f54856b6b6d84295fa3f3, type: 2}
+  appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
   canvasGroup: {fileID: 201567120}
 --- !u!1 &302801716
 GameObject:
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351d60b0dece34a378e320a2e14f4503, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleData: {fileID: 11400000, guid: 81ca6a60645f54856b6b6d84295fa3f3, type: 2}
+  appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
   canvasGroup: {fileID: 302801720}
 --- !u!1 &325959862
 GameObject:
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f6488d35ef44e21a1f26fdb9fce8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleData: {fileID: 11400000, guid: 81ca6a60645f54856b6b6d84295fa3f3, type: 2}
+  appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
   scoreText: {fileID: 136670184}
 --- !u!4 &337388291
 Transform:
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01492ce96c7fe45b89186afc4b414958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleData: {fileID: 11400000, guid: 81ca6a60645f54856b6b6d84295fa3f3, type: 2}
+  appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
 --- !u!114 &407631971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb57b0a5fba784a77ad1f9ec87091acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleData: {fileID: 11400000, guid: 81ca6a60645f54856b6b6d84295fa3f3, type: 2}
+  appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
   timeText: {fileID: 1822035232}
   timeUpText: {fileID: 1513096830}
 --- !u!4 &966217482
@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fc76862eb9747d7a92265d7635d422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleData: {fileID: 11400000, guid: 81ca6a60645f54856b6b6d84295fa3f3, type: 2}
+  appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
   lifeImages:
   - {fileID: 1762882512}
   - {fileID: 2078103962}
@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca689c0d8ad5c4267b40ffc5772919d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appleData: {fileID: 11400000, guid: 81ca6a60645f54856b6b6d84295fa3f3, type: 2}
+  appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
   canvasGroup: {fileID: 2127191816}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
