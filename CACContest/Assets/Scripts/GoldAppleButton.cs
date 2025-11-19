@@ -9,6 +9,9 @@ public class GoldAppleButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public Apple appleData;
+    public AudioSource correctSound;
+    public AudioSource normalSound;
+    public AudioSource wrongSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -35,10 +38,12 @@ public class GoldAppleButton : MonoBehaviour,
             appleData.score++;
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
+            correctSound.Play();
         }
         else if (appleData.appleName == "")
         {
             Debug.Log("枠内にりんごがありません");
+            normalSound.Play();
         }
         else
         {
@@ -46,6 +51,7 @@ public class GoldAppleButton : MonoBehaviour,
             appleData.life--;
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
+            wrongSound.Play();
         }
     }
 }

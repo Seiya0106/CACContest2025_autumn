@@ -9,6 +9,7 @@ public class BackButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public GameObject rulePanel;
+    public AudioSource buttonSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -29,6 +30,7 @@ public class BackButton : MonoBehaviour,
     {
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
+        buttonSound.Play();
         rulePanel.SetActive(false);
     }
 }
