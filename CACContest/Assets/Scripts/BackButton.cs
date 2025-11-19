@@ -8,8 +8,8 @@ public class BackButton : MonoBehaviour,
     IPointerUpHandler
 {
     public System.Action onClickCallback;
+    public BackSound backSound;
     public GameObject rulePanel;
-    public AudioSource buttonSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -30,7 +30,7 @@ public class BackButton : MonoBehaviour,
     {
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
-        buttonSound.Play();
+        backSound.isPlayed = true;
         rulePanel.SetActive(false);
     }
 }
