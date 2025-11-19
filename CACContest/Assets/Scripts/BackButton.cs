@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class RuleButton : MonoBehaviour,
+public class BackButton : MonoBehaviour,
     IPointerClickHandler,
     IPointerDownHandler,
     IPointerUpHandler
@@ -29,6 +29,6 @@ public class RuleButton : MonoBehaviour,
     {
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
-        rulePanel.SetActive(true);
+        rulePanel.SetActive(false);
     }
 }
