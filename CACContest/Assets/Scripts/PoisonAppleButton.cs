@@ -9,6 +9,7 @@ public class PoisonAppleButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public Apple appleData;
+    public LifeManager lifeManager;
     public AudioSource correctSound;
     public AudioSource normalSound;
     public AudioSource wrongSound;
@@ -52,6 +53,7 @@ public class PoisonAppleButton : MonoBehaviour,
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
             wrongSound.Play();
+            lifeManager.isLifeChanged = true;
         }
     }
 }
