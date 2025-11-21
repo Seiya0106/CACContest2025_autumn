@@ -10,7 +10,7 @@ public class NextButton : MonoBehaviour,
     public System.Action onClickCallback;
     public GameObject thisPanel;
     public GameObject nextPanel;
-    public AudioSource buttonSound;
+    public BackSound backSound;
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
     public void OnPointerClick(PointerEventData eventData)
@@ -30,7 +30,7 @@ public class NextButton : MonoBehaviour,
     {
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
-        buttonSound.Play();
+        backSound.buttonSound.Play();
         thisPanel.SetActive(false);
         nextPanel.SetActive(true);
     }

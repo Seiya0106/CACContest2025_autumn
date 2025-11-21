@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BackSound : MonoBehaviour
 {
-    public AudioSource backSound;
+    public AudioSource buttonSound;
     public bool isPlayed = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +15,7 @@ public class BackSound : MonoBehaviour
     {
         if (isPlayed)
         {
-            backSound.Play();
+            buttonSound.Play();
             isPlayed = false;
         }
     }
