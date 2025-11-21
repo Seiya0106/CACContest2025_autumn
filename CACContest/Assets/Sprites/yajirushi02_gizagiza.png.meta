@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9143a74202fce4490be3af4bc5646f51
+guid: 75d8d025333eb428895d33123ede7fde
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1312587649707599926
-    second: instruction_0
+      213: 1117062056339744253
+    second: yajirushi02_gizagiza_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: instruction_0
+      name: yajirushi02_gizagiza_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1536
+        x: 3
+        y: 4
+        width: 192
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 638e265538f373210800000000000000
-      internalID: 1312587649707599926
+      spriteID: df5a234950a908f00800000000000000
+      internalID: 1117062056339744253
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      instruction_0: 1312587649707599926
+      yajirushi02_gizagiza_0: 1117062056339744253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
