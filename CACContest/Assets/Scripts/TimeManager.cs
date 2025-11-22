@@ -7,6 +7,7 @@ public class TimeManager : MonoBehaviour
     public Apple appleData;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI timeUpText;
+    public AudioSource endSound;
     private bool isTimeUp = false;
     private bool isTimePlus = false;
     private bool intervalDecreased = false;
@@ -39,7 +40,7 @@ public class TimeManager : MonoBehaviour
         // 移動速度増加＆制限時間延長
         if (appleData.score % 5 == 0 && appleData.score > highScore && !isTimePlus)
         {
-            appleData.timeLimit += 5f;
+            appleData.timeLimit += 4f;
             appleData.moveSpeed -= 50f;
             isTimePlus = true;
             highScore = appleData.score;
@@ -73,6 +74,7 @@ public class TimeManager : MonoBehaviour
             timeUpText.gameObject.SetActive(true);
             isTimeUp = true;
             appleData.result = appleData.score;
+            endSound.Play();
             StartCoroutine(LoadResult());
         }
         else if (!isTimeUp)

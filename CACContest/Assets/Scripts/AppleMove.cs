@@ -1,14 +1,16 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AppleMove : MonoBehaviour
 {
     public Apple appleData;
+    public FailSound failSoundManager;
+    public LifeManager lifeManager;
     private bool isInFrame = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        failSoundManager = FindFirstObjectByType<FailSound>();
+        lifeManager = FindFirstObjectByType<LifeManager>();
     }
 
     // Update is called once per frame
@@ -20,7 +22,8 @@ public class AppleMove : MonoBehaviour
             appleData.appleName = "";
             appleData.isPushed = false;
             appleData.life--;
-            Debug.Log("スコア: " + appleData.score);
+            failSoundManager.isPlayed = true;
+            lifeManager.isLifeChanged = true;
             Destroy(this.gameObject);
         }
         else if (appleData.isPushed)

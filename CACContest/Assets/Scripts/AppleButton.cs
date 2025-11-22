@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
-using UnityEngine.Analytics;
 
 public class AppleButton : MonoBehaviour,
     IPointerClickHandler,
@@ -10,6 +9,10 @@ public class AppleButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public Apple appleData;
+    public LifeManager lifeManager;
+    public AudioSource correctSound;
+    public AudioSource normalSound;
+    public AudioSource wrongSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -36,10 +39,12 @@ public class AppleButton : MonoBehaviour,
             appleData.score++;
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
+            correctSound.Play();
         }
         else if (appleData.appleName == "")
         {
             Debug.Log("枠内にりんごがありません");
+            normalSound.Play();
         }
         else
         {
@@ -47,6 +52,8 @@ public class AppleButton : MonoBehaviour,
             appleData.life--;
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
+            wrongSound.Play();
+            lifeManager.isLifeChanged = true;
         }
     }
 }

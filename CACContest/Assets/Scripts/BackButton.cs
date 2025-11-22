@@ -2,13 +2,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class BackTitleButton : MonoBehaviour,
+public class BackButton : MonoBehaviour,
     IPointerClickHandler,
     IPointerDownHandler,
     IPointerUpHandler
 {
     public System.Action onClickCallback;
-    public AudioSource buttonSound;
+    public BackSound backSound;
+    public GameObject Panel;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -29,7 +30,7 @@ public class BackTitleButton : MonoBehaviour,
     {
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
-        buttonSound.Play();
-        Initiate.Fade("Title", Color.black, 0.5f);
+        backSound.isPlayed = true;
+        Panel.SetActive(false);
     }
 }

@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class BackTitleButton : MonoBehaviour,
+public class CreditButton : MonoBehaviour,
     IPointerClickHandler,
     IPointerDownHandler,
     IPointerUpHandler
 {
     public System.Action onClickCallback;
+    public GameObject creditPanel;
     public AudioSource buttonSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
@@ -30,6 +31,6 @@ public class BackTitleButton : MonoBehaviour,
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
         buttonSound.Play();
-        Initiate.Fade("Title", Color.black, 0.5f);
+        creditPanel.SetActive(true);
     }
 }

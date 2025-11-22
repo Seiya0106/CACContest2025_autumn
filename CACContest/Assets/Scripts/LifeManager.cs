@@ -7,22 +7,22 @@ public class LifeManager : MonoBehaviour
 {
     public Apple appleData;
     public List<Image> lifeImages;
+    public bool isLifeChanged = false;
+    private int lifeCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        lifeCount = appleData.life;
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < appleData.life; i++)
+        if (isLifeChanged)
         {
-            lifeImages[i].gameObject.SetActive(true);
-        }
-        for (int i = appleData.life; i < lifeImages.Count; i++)
-        {
-            lifeImages[i].gameObject.SetActive(false);
+            lifeCount--;
+            lifeImages[lifeCount].gameObject.SetActive(false);
+            isLifeChanged = false;
         }
     }
 }

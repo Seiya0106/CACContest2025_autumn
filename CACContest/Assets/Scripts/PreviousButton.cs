@@ -2,14 +2,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class BackTitleButton : MonoBehaviour,
+public class PreviousButton : MonoBehaviour,
     IPointerClickHandler,
     IPointerDownHandler,
     IPointerUpHandler
 {
     public System.Action onClickCallback;
-    public AudioSource buttonSound;
-
+    public GameObject thisPanel;
+    public GameObject previousPanel;
+    public BackSound backSound;
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
     public void OnPointerClick(PointerEventData eventData)
@@ -29,7 +30,8 @@ public class BackTitleButton : MonoBehaviour,
     {
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
-        buttonSound.Play();
-        Initiate.Fade("Title", Color.black, 0.5f);
+        backSound.buttonSound.Play();
+        thisPanel.SetActive(false);
+        previousPanel.SetActive(true);
     }
 }

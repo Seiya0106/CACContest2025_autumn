@@ -8,6 +8,7 @@ public class SceneChangeButton : MonoBehaviour,
     IPointerUpHandler
 {
     public System.Action onClickCallback;
+    public AudioSource buttonSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -28,6 +29,7 @@ public class SceneChangeButton : MonoBehaviour,
     {
         transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);  
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
+        buttonSound.Play();
         Initiate.Fade("Game", Color.black, 0.5f);
     }
 }
