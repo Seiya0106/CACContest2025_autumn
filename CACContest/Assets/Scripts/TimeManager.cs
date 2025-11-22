@@ -40,7 +40,7 @@ public class TimeManager : MonoBehaviour
         // 移動速度増加＆制限時間延長
         if (appleData.score % 5 == 0 && appleData.score > highScore && !isTimePlus)
         {
-            appleData.timeLimit += 1f;
+            appleData.timeLimit += 4f;
             appleData.moveSpeed -= 50f;
             isTimePlus = true;
             highScore = appleData.score;
