@@ -5,12 +5,16 @@ using DG.Tweening;
 public class SceneChangeButton : MonoBehaviour,
     IPointerClickHandler,
     IPointerDownHandler,
-    IPointerUpHandler
+    IPointerUpHandler,
+    IPointerEnterHandler,
+    IPointerExitHandler
 {
     public System.Action onClickCallback;
     public AudioSource buttonSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
+    public CreditButton creditButton;
+    public RuleButton ruleButton;
     // ボタンをクリックした時
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -20,8 +24,8 @@ public class SceneChangeButton : MonoBehaviour,
     // ボタンを押している間
     public void OnPointerDown(PointerEventData eventData)
     {
-        transform.DOScale(0.95f, 0.24f).SetEase(Ease.OutCubic);
-        canvasGroup.DOFade(0.8f, 0.24f).SetEase(Ease.OutCubic); 
+        transform.DOScale(0.95f, 0.15f).SetEase(Ease.OutCubic);
+        canvasGroup.DOFade(0.8f, 0.15f).SetEase(Ease.OutCubic); 
     }
 
     // ボタンを離したとき
@@ -31,5 +35,19 @@ public class SceneChangeButton : MonoBehaviour,
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
         buttonSound.Play();
         Initiate.Fade("Game", Color.black, 0.5f);
+        // シーン切り替えが始まったらボタンを押せないようにする
+        creditButton.enabled = false;
+        ruleButton.enabled = false;
+        this.enabled = false;
+    }
+    // hover時
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        transform.DOScale(1.03f, 0.24f).SetEase(Ease.OutCubic);
+    }
+    // hover終了時
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);
     }
 }

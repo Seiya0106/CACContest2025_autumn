@@ -8326,6 +8326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonSound: {fileID: 1925368426}
   canvasGroup: {fileID: 1925368425}
+  creditButton: {fileID: 726192488}
+  ruleButton: {fileID: 1340338829}
 --- !u!114 &1925368423
 MonoBehaviour:
   m_ObjectHideFlags: 0

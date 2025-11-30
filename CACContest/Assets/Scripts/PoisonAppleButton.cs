@@ -5,7 +5,9 @@ using DG.Tweening;
 public class PoisonAppleButton : MonoBehaviour,
     IPointerClickHandler,
     IPointerDownHandler,
-    IPointerUpHandler
+    IPointerUpHandler,
+    IPointerEnterHandler,
+    IPointerExitHandler
 {
     public System.Action onClickCallback;
     public Apple appleData;
@@ -24,8 +26,8 @@ public class PoisonAppleButton : MonoBehaviour,
     // ボタンを押している間
     public void OnPointerDown(PointerEventData eventData)
     {
-        transform.DOScale(0.95f, 0.24f).SetEase(Ease.OutCubic);
-        canvasGroup.DOFade(0.8f, 0.24f).SetEase(Ease.OutCubic); 
+        transform.DOScale(0.95f, 0.15f).SetEase(Ease.OutCubic);
+        canvasGroup.DOFade(0.8f, 0.15f).SetEase(Ease.OutCubic); 
     }
 
     // ボタンを離したとき
@@ -35,7 +37,6 @@ public class PoisonAppleButton : MonoBehaviour,
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
         if (appleData.appleName == "PoisonApple(Clone)")
         {
-            Debug.Log("毒リンゴが押された");
             appleData.score++;
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
@@ -43,17 +44,25 @@ public class PoisonAppleButton : MonoBehaviour,
         }
         else if (appleData.appleName == "")
         {
-            Debug.Log("枠内にりんごがありません");
             normalSound.Play();
         }
         else
         {
-            Debug.Log("違うリンゴが押された");
             appleData.life--;
             Debug.Log("スコア: " + appleData.score);
             appleData.isPushed = true;
             wrongSound.Play();
             lifeManager.isLifeChanged = true;
         }
+    }
+    // hover時
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        transform.DOScale(1.05f, 0.24f).SetEase(Ease.OutCubic);
+    }
+    // hover終了時
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);
     }
 }
