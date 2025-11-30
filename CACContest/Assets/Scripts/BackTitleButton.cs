@@ -5,7 +5,9 @@ using DG.Tweening;
 public class BackTitleButton : MonoBehaviour,
     IPointerClickHandler,
     IPointerDownHandler,
-    IPointerUpHandler
+    IPointerUpHandler,
+    IPointerEnterHandler,
+    IPointerExitHandler
 {
     public System.Action onClickCallback;
     public AudioSource buttonSound;
@@ -20,8 +22,8 @@ public class BackTitleButton : MonoBehaviour,
     // ボタンを押している間
     public void OnPointerDown(PointerEventData eventData)
     {
-        transform.DOScale(0.95f, 0.24f).SetEase(Ease.OutCubic);
-        canvasGroup.DOFade(0.8f, 0.24f).SetEase(Ease.OutCubic); 
+        transform.DOScale(0.95f, 0.15f).SetEase(Ease.OutCubic);
+        canvasGroup.DOFade(0.8f, 0.15f).SetEase(Ease.OutCubic); 
     }
 
     // ボタンを離したとき
@@ -31,5 +33,15 @@ public class BackTitleButton : MonoBehaviour,
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
         buttonSound.Play();
         Initiate.Fade("Title", Color.black, 0.5f);
+    }
+    // hover時
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        transform.DOScale(1.03f, 0.24f).SetEase(Ease.OutCubic);
+    }
+    // hover終了時
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        transform.DOScale(1f, 0.24f).SetEase(Ease.OutCubic);
     }
 }
