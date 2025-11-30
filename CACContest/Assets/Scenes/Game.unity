@@ -1629,6 +1629,9 @@ MonoBehaviour:
   timeText: {fileID: 1822035232}
   timeUpText: {fileID: 1513096830}
   endSound: {fileID: 966217483}
+  appleButton: {fileID: 302801721}
+  goldAppleButton: {fileID: 201567121}
+  poisonAppleButton: {fileID: 2127191817}
 --- !u!4 &966217482
 Transform:
   m_ObjectHideFlags: 0

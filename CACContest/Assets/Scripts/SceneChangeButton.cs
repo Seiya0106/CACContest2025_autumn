@@ -13,6 +13,8 @@ public class SceneChangeButton : MonoBehaviour,
     public AudioSource buttonSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
+    public CreditButton creditButton;
+    public RuleButton ruleButton;
     // ボタンをクリックした時
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -33,6 +35,10 @@ public class SceneChangeButton : MonoBehaviour,
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
         buttonSound.Play();
         Initiate.Fade("Game", Color.black, 0.5f);
+        // シーン切り替えが始まったらボタンを押せないようにする
+        creditButton.enabled = false;
+        ruleButton.enabled = false;
+        this.enabled = false;
     }
     // hover時
     public void OnPointerEnter(PointerEventData eventData)

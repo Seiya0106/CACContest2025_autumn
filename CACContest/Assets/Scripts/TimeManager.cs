@@ -8,6 +8,9 @@ public class TimeManager : MonoBehaviour
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI timeUpText;
     public AudioSource endSound;
+    public AppleButton appleButton;
+    public GoldAppleButton goldAppleButton;
+    public PoisonAppleButton poisonAppleButton;
     private bool isTimeUp = false;
     private bool isTimePlus = false;
     private bool intervalDecreased = false;
@@ -70,6 +73,11 @@ public class TimeManager : MonoBehaviour
     {
         if ((appleData.timeLimit <= 0 || appleData.life <= 0) && !isTimeUp)
         {
+            // ゲーム終了でボタンを押せなくする
+            appleButton.enabled = false;
+            goldAppleButton.enabled = false;
+            poisonAppleButton.enabled = false;
+            
             appleData.timeLimit = 0;
             timeUpText.gameObject.SetActive(true);
             isTimeUp = true;

@@ -33,6 +33,8 @@ public class BackTitleButton : MonoBehaviour,
         canvasGroup.DOFade(1f, 0.24f).SetEase(Ease.OutCubic);
         buttonSound.Play();
         Initiate.Fade("Title", Color.black, 0.5f);
+        // シーン遷移が始まったらボタンを押せないようにする
+        this.enabled = false;
     }
     // hover時
     public void OnPointerEnter(PointerEventData eventData)
