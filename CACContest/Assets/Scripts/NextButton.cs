@@ -39,7 +39,7 @@ public class NextButton : MonoBehaviour,
     // hover時
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.DOScale(1.05f, 0.24f).SetEase(Ease.OutCubic);
+        transform.DOScale(1.07f, 0.24f).SetEase(Ease.OutCubic);
     }
     // hover終了時
     public void OnPointerExit(PointerEventData eventData)
