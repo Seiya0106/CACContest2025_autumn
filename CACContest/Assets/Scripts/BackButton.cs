@@ -39,6 +39,7 @@ public class BackButton : MonoBehaviour,
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOScale(1.07f, 0.24f).SetEase(Ease.OutCubic);
+        backSound.hoverSound.Play();
     }
     // hover終了時
     public void OnPointerExit(PointerEventData eventData)
