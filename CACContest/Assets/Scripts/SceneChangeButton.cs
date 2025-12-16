@@ -11,6 +11,7 @@ public class SceneChangeButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public AudioSource buttonSound;
+    public AudioSource hoverSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     public CreditButton creditButton;
@@ -44,6 +45,7 @@ public class SceneChangeButton : MonoBehaviour,
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOScale(1.03f, 0.24f).SetEase(Ease.OutCubic);
+        hoverSound.Play();
     }
     // hover終了時
     public void OnPointerExit(PointerEventData eventData)

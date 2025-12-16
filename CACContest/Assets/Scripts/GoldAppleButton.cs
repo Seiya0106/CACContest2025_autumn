@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class GoldAppleButton : MonoBehaviour,
     IPointerClickHandler,
@@ -11,10 +12,12 @@ public class GoldAppleButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public Apple appleData;
+    public GameButtonManager gameButtonManager;
     public LifeManager lifeManager;
     public AudioSource correctSound;
     public AudioSource normalSound;
     public AudioSource wrongSound;
+    public AudioSource hoverSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -45,6 +48,7 @@ public class GoldAppleButton : MonoBehaviour,
         else if (appleData.appleName == "")
         {
             normalSound.Play();
+            gameButtonManager.isMissed = true;
         }
         else
         {
@@ -53,12 +57,20 @@ public class GoldAppleButton : MonoBehaviour,
             appleData.isPushed = true;
             wrongSound.Play();
             lifeManager.isLifeChanged = true;
+            gameButtonManager.isMissed = true;
+        }
+
+        if (gameButtonManager.isMissed)
+        {
+            this.GetComponent<Image>().color = gameButtonManager.color;
+            this.enabled = false;
         }
     }
     // hover時
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOScale(1.05f, 0.24f).SetEase(Ease.OutCubic);
+        hoverSound.Play();
     }
     // hover終了時
     public void OnPointerExit(PointerEventData eventData)

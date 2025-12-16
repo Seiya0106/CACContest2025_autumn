@@ -12,6 +12,7 @@ public class CreditButton : MonoBehaviour,
     public System.Action onClickCallback;
     public GameObject creditPanel;
     public AudioSource buttonSound;
+    public AudioSource hoverSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -39,6 +40,7 @@ public class CreditButton : MonoBehaviour,
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOScale(1.03f, 0.24f).SetEase(Ease.OutCubic);
+        hoverSound.Play();
     }
     // hover終了時
     public void OnPointerExit(PointerEventData eventData)

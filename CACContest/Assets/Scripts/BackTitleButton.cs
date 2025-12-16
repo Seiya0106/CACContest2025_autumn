@@ -11,6 +11,7 @@ public class BackTitleButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public AudioSource buttonSound;
+    public AudioSource hoverSound;
 
     [SerializeField] private CanvasGroup canvasGroup;
     // ボタンをクリックした時
@@ -40,6 +41,7 @@ public class BackTitleButton : MonoBehaviour,
     public void OnPointerEnter(PointerEventData eventData)
     {
         transform.DOScale(1.05f, 0.24f).SetEase(Ease.OutCubic);
+        hoverSound.Play();
     }
     // hover終了時
     public void OnPointerExit(PointerEventData eventData)
