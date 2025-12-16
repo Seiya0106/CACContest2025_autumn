@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "73a63b7f672b88f7e9992f6917eb458a8cbb6fa9"
+    },
     "com.unity.2d.animation": {
       "version": "10.2.1",
       "depth": 1,
@@ -323,11 +330,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unityroom.client": {
-      "version": "https://github.com/naichilab/unityroom-client-library.git?path=Assets/unityroom",
+      "version": "https://github.com/unityroom/unityroom-sdk.git?path=src/Unityroom.Client/Assets/Unityroom.Client",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c4dea57e1c27567bac512e090a356b08abf83d0b"
+      "hash": "5e3b8e55d675c8990161f8885593c2af3f0ec99c"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
