@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using unityroom.Api;
 
 public class ResultManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ResultManager : MonoBehaviour
     {
         resultText.text = "Result";
         resultPointText.text = appleData.score.ToString();
+        UnityroomApiClient.Instance.SendScore(1, appleData.score, ScoreboardWriteMode.HighScoreDesc);
     }
 
     // Update is called once per frame
