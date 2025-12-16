@@ -30,7 +30,7 @@ public class TimeManager : MonoBehaviour
         timeText.text = "Time\n" + Mathf.FloorToInt(appleData.timeLimit).ToString();
         TimeUp();
         // 出現速度増加
-        if (appleData.score % 10 == 0 && appleData.score > 0 && !intervalDecreased && appleData.interval > 2.0f)
+        if (appleData.score % 10 == 0 && appleData.score > 0 && !intervalDecreased && appleData.interval > 1.0f)
         {
             appleData.interval -= 0.2f;
             intervalDecreased = true;
