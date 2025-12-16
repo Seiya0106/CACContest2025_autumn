@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
+  gameButtonManager: {fileID: 247883249}
   lifeManager: {fileID: 1419445449}
   correctSound: {fileID: 201567124}
   normalSound: {fileID: 201567123}
@@ -834,6 +835,55 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &247883248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247883250}
+  - component: {fileID: 247883249}
+  m_Layer: 0
+  m_Name: GameButtonManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &247883249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247883248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdaca7affb0084803a7146f90bd8c0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHited: 0
+  coolTime: 0.3
+  appleButton: {fileID: 302801721}
+  goldAppleButton: {fileID: 201567121}
+  poisonAppleButton: {fileID: 2127191817}
+--- !u!4 &247883250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247883248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 214.42111, y: 325.48584, z: -1.7421855}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302801716
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
+  gameButtonManager: {fileID: 247883249}
   lifeManager: {fileID: 1419445449}
   correctSound: {fileID: 302801724}
   normalSound: {fileID: 302801723}
@@ -2739,6 +2790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appleData: {fileID: 11400000, guid: 4097b4608d0174879aae86c6dee0d506, type: 2}
+  gameButtonManager: {fileID: 247883249}
   lifeManager: {fileID: 1419445449}
   correctSound: {fileID: 2127191820}
   normalSound: {fileID: 2127191819}
@@ -3144,3 +3196,4 @@ SceneRoots:
   - {fileID: 966217482}
   - {fileID: 1419445450}
   - {fileID: 1124102719}
+  - {fileID: 247883250}

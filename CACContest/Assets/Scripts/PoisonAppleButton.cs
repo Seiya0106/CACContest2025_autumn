@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class PoisonAppleButton : MonoBehaviour,
     IPointerClickHandler,
@@ -11,6 +12,7 @@ public class PoisonAppleButton : MonoBehaviour,
 {
     public System.Action onClickCallback;
     public Apple appleData;
+    public GameButtonManager gameButtonManager;
     public LifeManager lifeManager;
     public AudioSource correctSound;
     public AudioSource normalSound;
@@ -46,6 +48,7 @@ public class PoisonAppleButton : MonoBehaviour,
         else if (appleData.appleName == "")
         {
             normalSound.Play();
+            gameButtonManager.isMissed = true;
         }
         else
         {
@@ -54,6 +57,13 @@ public class PoisonAppleButton : MonoBehaviour,
             appleData.isPushed = true;
             wrongSound.Play();
             lifeManager.isLifeChanged = true;
+            gameButtonManager.isMissed = true;
+        }
+
+        if (gameButtonManager.isMissed)
+        {
+            this.GetComponent<Image>().color = gameButtonManager.color;
+            this.enabled = false;
         }
     }
     // hover時
